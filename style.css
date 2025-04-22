@@ -172,66 +172,124 @@ main {
 /* Mobile devices (up to 600px) */
 @media (max-width: 600px) {
   html {
-    font-size: 50%; /* Reduce base font size for smaller screens */
+    font-size: 55%; /* Slightly larger base font size for better readability */
+  }
+
+  body {
+    padding: 0.5rem; /* Reduce padding to maximize space */
   }
 
   main {
     flex-direction: column; /* Stack players vertically */
-    width: 90vw;
+    width: 95vw; /* Use more viewport width */
     height: auto; /* Allow height to adjust */
-    min-height: 80vh;
+    min-height: 90vh; /* Ensure enough height for content */
+    border-radius: 12px; /* Slightly larger radius for modern look */
   }
 
   .player {
-    flex: 100%;
-    padding: 2rem;
+    flex: 1; /* Equal height for both players */
+    padding: clamp(1.5rem, 5vw, 2.5rem); /* Reduced padding for compact layout */
+    min-height: 40vh; /* Ensure each player section is tall enough */
+  }
+
+  .name {
+    font-size: clamp(2rem, 6vw, 3rem); /* Smaller but readable font */
+    margin-bottom: 0.5rem;
+  }
+
+  .score {
+    font-size: clamp(3rem, 10vw, 5rem); /* Adjusted for mobile readability */
   }
 
   .current {
-    width: 80%; /* Wider current score box for readability */
+    width: 85%; /* Slightly wider for better visibility */
+    padding: clamp(0.8rem, 4vw, 1.5rem); /* Compact padding */
+  }
+
+  .current-label {
+    font-size: clamp(1rem, 3vw, 1.4rem); /* Smaller but clear */
+  }
+
+  .current-score {
+    font-size: clamp(1.8rem, 5vw, 2.8rem); /* Adjusted for mobile */
+  }
+
+  .btn {
+    font-size: clamp(1.2rem, 4vw, 1.6rem); /* Smaller buttons for mobile */
+    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 4vw, 2rem);
+    min-width: 10rem; /* Slightly smaller but still touch-friendly */
+  }
+
+  .btn::first-letter {
+    font-size: clamp(1.6rem, 5vw, 2rem);
   }
 
   .btn--new {
-    top: 2%;
+    top: 1%; /* Closer to top for accessibility */
   }
 
   .btn--roll {
     top: auto;
-    bottom: 15%; /* Position at bottom for accessibility */
+    bottom: 12%; /* Positioned at bottom with spacing */
   }
 
   .btn--hold {
     top: auto;
-    bottom: 5%;
+    bottom: 2%; /* Closer to bottom for easy access */
   }
 
   .dice {
-    top: 50%;
-    height: 8rem;
+    top: 45%; /* Centered between players */
+    height: clamp(5rem, 15vw, 7rem); /* Smaller dice for mobile */
   }
 }
 
 /* Tablets (601px to 900px) */
 @media (min-width: 601px) and (max-width: 900px) {
+  html {
+    font-size: 58%; /* Slightly smaller than desktop for scaling */
+  }
+
   main {
-    width: 95vw;
-    height: 80vh;
+    flex-direction: row; /* Keep side-by-side for tablets */
+    width: 90vw; /* Use most of the viewport */
+    height: 85vh; /* Slightly taller for better fit */
+    border-radius: 10px;
   }
 
   .player {
-    padding: 4rem;
+    padding: clamp(2rem, 6vw, 3rem); /* Moderate padding */
+  }
+
+  .name {
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  }
+
+  .score {
+    font-size: clamp(3.5rem, 6vw, 6rem);
+  }
+
+  .current {
+    width: 70%; /* Slightly wider than desktop */
+    padding: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .btn {
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1.5rem, 2.5vw, 2rem);
   }
 
   .btn--roll {
-    top: 65%;
+    top: 68%; /* Adjusted for better spacing */
   }
 
   .btn--hold {
-    top: 75%;
+    top: 78%;
   }
 
   .dice {
-    top: 25%;
-    height: 9rem;
+    top: 28%; /* Slightly higher for balance */
+    height: clamp(7rem, 8vw, 8rem); /* Moderate dice size */
   }
 }
